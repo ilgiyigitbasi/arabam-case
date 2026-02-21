@@ -12,22 +12,40 @@ export const useStore = defineStore('listings', () => {
   const detailError = ref<string | null>(null)
   const params = ref<ListingParams>({ take: 20, sort: 2, sortDirection: 1 })
 
-  async function fetchListings(newParams?: Partial<ListingParams>) {
-    if (newParams) {
-      params.value = { ...params.value, ...newParams }
-    }
-    isLoadingList.value = true
-    listError.value = null
-    try {
-      const response = await getListings(params.value)
-      list.value = response.data
-    } catch (err) {
-      listError.value = 'İlanlar yüklenirken bir hata oluştu.'
-      console.error(err)
-    } finally {
-      isLoadingList.value = false
-    }
+const skip = ref(0)
+const hasMore = ref(true)
+
+async function fetchListings(newParams?: Partial<ListingParams>) {
+  params.value = { ...params.value, ...newParams }
+  skip.value = 0
+  list.value = []
+  hasMore.value = true
+  await fetchPage()
+}
+
+async function loadMore() {
+  console.log('loadMore called, scroll:', window.scrollY)
+  if (!hasMore.value || isLoadingList.value) return
+  await fetchPage()
+  console.log('after fetchPage, scroll:', window.scrollY)
+}
+
+async function fetchPage() {
+  isLoadingList.value = true
+  listError.value = null
+  try {
+    const response = await getListings({ ...params.value, skip: skip.value })
+    const newItems = response.data
+    list.value.push(...newItems)
+    skip.value += params.value.take
+    hasMore.value = newItems.length === params.value.take
+  } catch (err) {
+    listError.value = 'İlanlar yüklenirken bir hata oluştu.'
+    console.error(err)
+  } finally {
+    isLoadingList.value = false
   }
+}
 
   async function fetchDetail(id: number) {
     isLoadingDetail.value = true
@@ -66,5 +84,8 @@ export const useStore = defineStore('listings', () => {
     fetchDetail,
     setTake,
     resetFilters,
+    loadMore,
+    hasMore,
+    skip
   }
 })

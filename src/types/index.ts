@@ -52,7 +52,8 @@ export interface Detail {
 
 export interface ListingParams {
   take: 20 | 50
-  sort?: 1 | 2 | 3  
+  skip?: number;
+  sort?: SortType
   sortDirection?: 0 | 1  
   minDate?: string
   maxDate?: string
@@ -62,3 +63,6 @@ export interface ListingParams {
   minPrice?: number
   maxPrice?: number
 }
+
+export type SortType = 0 | 1 | 2
+export type SortDirection = 0 | 1
