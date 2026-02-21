@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 py-8">
-    <!-- Header -->
+
     <div class="flex items-center justify-between mb-6">
       <h1 class="font-bold text-3xl text-gray-900">İlanlar</h1>
 
@@ -15,7 +15,6 @@
       </button>
     </div>
 
-    <!-- Toolbar -->
     <div class="flex items-center justify-between mb-6">
       <div class="flex items-center gap-2">
         <span class="text-sm text-gray-500">Sırala:</span>
@@ -58,20 +57,17 @@
       </div>
     </div>
 
-    <!-- List -->
     <div v-if="store.isLoadingList && store.list.length === 0">Yükleniyor...</div>
     <div v-else-if="store.listError">{{ store.listError }}</div>
     <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <AdCard v-for="item in store.list" :key="item.id" :item="item" />
     </div>
 
-    <!-- Sentinel -->
     <div ref="sentinel" class="h-10 flex items-center justify-center mt-4">
       <span v-if="store.isLoadingList && store.list.length > 0" class="text-sm text-gray-400">Yükleniyor...</span>
       <span v-else-if="!store.hasMore" class="text-sm text-gray-400">Tüm ilanlar yüklendi</span>
     </div>
 
-    <!-- Filter Modal -->
     <FilterModal
       :isOpen="showFilter"
       :currentFilters="store.params"
