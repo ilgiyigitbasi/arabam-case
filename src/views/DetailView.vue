@@ -6,11 +6,7 @@
     <div v-else-if="store.detailError">{{ store.detailError }}</div>
 
     <div v-else-if="store.selectedItem">
-      <img
-        :src="getPhotoUrl(store.selectedItem.photos[0] ?? '', '800x600')"
-        :alt="store.selectedItem.title"
-        class="w-full h-96 object-contain rounded-xl mb-6"
-      />
+      <PhotoSlider :photos="store.selectedItem.photos" />
 
       <div class="flex items-start justify-between mb-4">
         <h1 class="font-bold text-2xl text-gray-900">{{ store.selectedItem.title }}</h1>
@@ -50,7 +46,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useStore } from '@/stores/store'
-import { getPhotoUrl } from '@/services/api'
+import PhotoSlider from '@/components/detail/PhotoSlider.vue'
 
 const props = defineProps<{
   id: number
