@@ -1,8 +1,8 @@
-/* detail.css */
+
 .ui-card {
   background: #1a1c1e;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 32px; /* Biraz daha keskin ve modern */
+  border-radius: 32px;
   overflow: hidden;
 }
 
@@ -11,14 +11,12 @@
 .info-content h1 { color: #fff; font-size: 20px; font-weight: 800; }
 .info-content p { color: #9ca3af; font-size: 10px; font-weight: 700; text-transform: uppercase; }
 
-/* Fiyatı küçülttük */
 .price-text { 
   color: #e31e24; 
   font-size: 28px; 
   font-weight: 900; 
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 .spec-item {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 20px;

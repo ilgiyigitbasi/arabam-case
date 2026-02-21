@@ -3,9 +3,9 @@
 @theme {
   --color-primary: #e4002b;
   --color-primary-dark: #b8001f;
-  /* Arka plan: Saf siyah değil, çok koyu bir lacivert-gri */
+
   --color-surface-dark: #0f1115; 
-  /* Kartlar: Arka plandan bir tık açık */
+
   --color-surface-card: #1a1d23;
   --color-surface-alt: #242830;
   

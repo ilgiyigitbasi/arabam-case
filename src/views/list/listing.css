@@ -1,0 +1,63 @@
+.page-title { color: #fff; font-weight: 900; font-size: 1.5rem; letter-spacing: -0.02em; }
+.page-subtitle { color: #9ca3af; font-size: 0.875rem; }
+
+.filter-btn {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 24px;
+  background: #1a1c1e;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  font-size: 14px; font-weight: 700; color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.filter-btn:hover { background: #25282c; border-color: #e31e24; }
+
+.toolbar {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 22px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  .toolbar { flex-direction: row; }
+}
+
+.dir-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.sort-label { font-size: 10px; font-weight: 900; color: #6b7280; text-transform: uppercase; letter-spacing: 0.2em; }
+
+.sort-pill { padding: 8px 20px; border-radius: 12px; font-size: 12px; font-weight: 700; color: #9ca3af; transition: all 0.3s; cursor: pointer; }
+.sort-pill:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sort-pill.active { background: #e31e24; color: #fff; box-shadow: 0 10px 15px -3px rgba(227,30,36,0.2); transform: scale(1.05); }
+
+.dir-btn { display: flex; cursor: pointer; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 12px; font-size: 11px; font-weight: 900; text-transform: uppercase; color: #6b7280; transition: all 0.2s; }
+.dir-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.dir-arrow { 
+    color: #e31e24;
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.5s;}
+
+.take-group { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 4px; }
+.take-btn { padding: 6px 20px; cursor: pointer; font-size: 11px; font-weight: 900; text-transform: uppercase; color: #6b7280; border-radius: 8px; transition: all 0.2s; }
+.take-btn.active { background: #fff; color: #000; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+
+.skeleton-card { aspect-ratio: 4/5; background: #1a1c1e; border-radius: 24px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.error-box { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #f87171; }
+
+.spinner { border-color: rgba(227,30,36,0.2); border-top-color: #e31e24; border-radius: 9999px; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.end-text { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; color: #6b7280; }

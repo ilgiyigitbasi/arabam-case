@@ -3,10 +3,11 @@
 
     <div class="flex h-full transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
       :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-      <img v-for="(photo, index) in photos" :key="index" :src="getPhotoUrl(photo, '800x600')"
-        :alt="`Fotoğraf ${index + 1}`"
-        class="w-full h-full object-cover flex-shrink-0 cursor-zoom-in transition-transform duration-700 group-hover:scale-105"
-        @click="openFullscreen(index)" />
+      <div v-for="(photo, index) in photos" :key="index" class="w-full h-full flex-shrink-0 overflow-hidden">
+        <img :src="getPhotoUrl(photo, '800x600')" :alt="`Fotoğraf ${index + 1}`"
+          class="w-full h-full object-cover cursor-zoom-in transition-transform duration-700 group-hover:scale-105"
+          @click="openFullscreen(index)" />
+      </div>
     </div>
 
     <button v-if="currentIndex > 0" @click="prev"

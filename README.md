@@ -1,5 +1,53 @@
-# Vue 3 + TypeScript + Vite
+# Arabam Case Study
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Arabam.com için geliştirilmiş araç ilan listeleme ve detay uygulaması.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 🚀 Teknolojiler
+
+- **Vue 3** + TypeScript
+- **Vite**
+- **Pinia** (State Management)
+- **Vue Router**
+- **Tailwind CSS v4**
+- **Axios**
+
+## ✨ Özellikler
+
+- İlan listeleme sayfası
+- Infinite scroll
+- Fiyat, tarih ve yıla göre sıralama
+- Filtre modal (tarih, yıl, fiyat aralığı)
+- İlan detay sayfası
+- Fotoğraf slider ve fullscreen görünüm
+- Responsive tasarım
+
+## 🛠 Kurulum
+
+```bash
+npm install
+```
+
+## ⚙️ Environment Variables
+
+`.env` dosyası için base url değişkeni (example da projede var):
+
+```
+VITE_API_BASE_URL=https://sandbox.arabamd.com/api/v1
+```
+
+## 🚀 Çalıştırma
+
+```bash
+# Development
+npm run dev
+
+# Production build
+npm run build
+
+# Preview
+npm run preview
+```
+
+## 🌐 Demo
+
+[arabam-case.vercel.app](https://arabam-case.vercel.app)

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ListingView from '@/views/ListingView.vue'
+import ListingView from '@/views/list/ListingView.vue'
 import DetailView from '@/views/detail/DetailView.vue'
 
 const router = createRouter({
