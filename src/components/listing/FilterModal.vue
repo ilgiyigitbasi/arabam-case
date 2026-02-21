@@ -4,12 +4,10 @@
       v-if="isOpen"
       class="fixed inset-0 z-50 flex items-center justify-center p-4"
     >
-      <!-- Backdrop -->
       <div class="absolute inset-0 bg-black/50" @click="$emit('close')" />
 
-      <!-- Panel -->
       <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
-        <!-- Header -->
+
         <div class="flex items-center justify-between p-6 border-b border-gray-100">
           <h2 class="font-bold text-xl text-gray-900">Filtrele</h2>
           <button @click="$emit('close')" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
@@ -17,9 +15,8 @@
           </button>
         </div>
 
-        <!-- Filters -->
         <div class="p-6 space-y-5">
-          <!-- Min/Max Year -->
+
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Yıl Aralığı</label>
             <div class="grid grid-cols-2 gap-3">
@@ -38,7 +35,6 @@
             </div>
           </div>
 
-          <!-- Min/Max Price -->
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Fiyat Aralığı (₺)</label>
             <div class="grid grid-cols-2 gap-3">
@@ -57,7 +53,6 @@
             </div>
           </div>
 
-          <!-- Min/Max Date -->
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">Tarih Aralığı</label>
             <div class="grid grid-cols-2 gap-3">
@@ -75,7 +70,6 @@
           </div>
         </div>
 
-        <!-- Footer -->
         <div class="flex gap-3 p-6 border-t border-gray-100">
           <button
             @click="handleReset"

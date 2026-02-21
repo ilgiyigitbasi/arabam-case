@@ -1,20 +1,16 @@
 <template>
-  <RouterLink :to="{ name: 'detail', params: { id: item.id } }" class="ad-card block bg-white rounded-xl overflow-hidden border border-gray-100 cursor-pointer">
-    <div class="relative aspect-[4/3] bg-gray-100 overflow-hidden">
-      <img
-        :src="photoUrl"
-        :alt="item.title"
-        class="w-full h-full object-cover"
-        loading="lazy"
-      />
+  <RouterLink :to="{ name: 'detail', params: { id: item.id } }"
+    class="ad-card block bg-surface-dark rounded-xl overflow-hidden transition-all duration-300 cursor-pointer">
+    <div class="relative aspect-[4/3] bg-surface-dark overflow-hidden">
+      <img :src="photoUrl" :alt="item.title" class="w-full h-full object-cover" loading="lazy" />
     </div>
 
-    <div class="p-4">
-      <h3 class="font-semibold text-gray-900 text-sm leading-tight line-clamp-2 mb-2">
+    <div class="p-3 bg-surface-dark">
+      <h3 class="text-white font-medium text-sm leading-tight line-clamp-2 mb-1.5">
         {{ item.title }}
       </h3>
-      <p class="text-brand font-bold text-lg">{{ item.priceFormatted }}</p>
-      <div class="flex items-center justify-between text-xs text-gray-500 mt-2">
+      <p class="text-primary font-semibold text-sm">{{ item.priceFormatted }}</p>
+      <div class="flex items-center justify-between text-xs text-gray-400 mt-1.5">
         <span>{{ item.location.cityName }}</span>
         <span>{{ item.dateFormatted }}</span>
       </div>
